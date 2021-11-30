@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="../static/style.css" />
+        <title>Restaurant</title>
+      </head>
+      <body>
+        <div class="container">
+          
+          <form action="/submit" method="POST">
+            <div class="form-group">
+              <h3>Customer Name</h3>
+              <input
+                type="text"
+                name="customer"
+                placeholder="Name"
+              />
+            </div>
+            <div class="form-group">
+              <h3>Meals</h3>
+              <select name="dealer">
+                <option value="">Select Meal</option>
+                <option value="Egg Soup">Egg Soup</option>
+                <option value="Grilled Cheese">Grilled Cheese</option>
+                <option value="Jumbo Burger">Jumbo Burger</option>
+                <option value="Shrimp Stirfry">Shrimp Stirfry</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <h3>Special Instructions</h3>
+              <textarea
+                name="comments"
+                id=""
+                cols="30"
+                rows="5"
+                placeholder="Tell us any special instructions"
+              ></textarea>
+            </div>
+            <input type="Add to Cart" value="Add to Cart" class="btn" />
+          </form>
+        </div>
+      </body>
+</html>
