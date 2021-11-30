@@ -37,9 +37,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/admin', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def admin():
-    return render_template('admin.html')
+    return render_template('login.html')
 
 
 if __name__ == '__main__':
