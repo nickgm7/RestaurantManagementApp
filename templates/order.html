@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <link rel="stylesheet" type="text/css" href="order.css">-->
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                font-family: sans-serif;
+                box-sizing: border-box;
+            }
+            h1{
+                text-align: center;
+                padding: 20px;
+            }
+            nav{
+                display: grid;
+                place-items: center;
+            }
+            nav ul{
+                display: inline-block;
+                list-style-type: none;
+            }
+            nav ul a{
+                display: inline-block;
+                padding: 20px;
+                font-size: 20px;
+                text-decoration: none;
+                color: darkgray;
+                transition: 0.2s ease-in;
+            }
+            nav ul a:hover{
+                color: white;
+            }
+            .items{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                padding: 30px 20px;
+                grid-column-gap: 20px;
+                grid-row-gap: 30px;
+            }
+            .item img{
+                width: 100%;
+                height: 300px;object-fit: cover;
+                cursor: pointer;
+                transition: 0.2s ease;
+            }
+            .item img:hover{
+                transform: scale(1.04);
+            }
+            .item h4{
+                padding: 5px;
+                text-align: center;
+            }
+            @media screen and (max-width: 1000px) {
+                .items{
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            @media screen and (max-width: 768px) {
+                .items{
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+
+            .opt form input[type="button"]{
+                background-color: black;
+                color:white;
+                padding: 6px;
+                margin: 0 auto;
+                padding-left: 25px;
+                padding-right: 25px;
+                text-align: center;
+                cursor: pointer;
+                display: block;
+            }
+            .opt form input[type="button"]:hover{
+                background-color: salmon;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+        <div class="box">
+            <ul type="none">
+              <a href=""> <li>Home</li></a>
+              <a href=""> <li>Menu</li></a>
+              <a href=""> <li>Order</li></a>
+              <a href=""> <li>Login</li></a>
+            </ul>
+        </div>
+        </nav>
+
+        <section class="items">
+            <div class="item">
+                <image src="Images\Almond and banana biscuits.png">
+                <h4>Almond and Banana Biscuits</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Bean and pesto lasagne.jpg">
+                <h4>Bean and Pesto Lasagne</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Cannellini and artichoke soup.jpg">
+                <h4>Cannellini and Artichoke Soup</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Chicken and egg spaghetti.jpg">
+                <h4>Chicken and Egg Spaghetti</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Date and mandarin salad.png">
+                <h4>Date and Mandarin Salad</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Egg and apple pizza.jpg">
+                <h4>Egg and Apple Pizza</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Jaggery and pepper salad.jpg">
+                <h4>Jaggery and Pepper Salad</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Lamb and olive fusilli.jpg">
+                <h4>Lamb and Olive Fusilli</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Lemon and bacon cupcakes.jpg">
+                <h4>Lemon and Bacon Cupcakes</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Mackerel and camembert salad.jpg">
+                <h4>Mackerel and Camembert Salad</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Milk chocolate and sultana cookies.jpg">
+                <h4>Milk Chocolate and Sultana Cookies</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Mortadella and chocolate mousse.jpg">
+                <h4>Mortadella and Chocolate Mousse</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Okra and shallot stir fry.jpg">
+                <h4>Okra and Shallot Stir Fry</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Pepper and crayfish bagel.jpg">
+                <h4>Pepper and Crayfish Bagel</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Rabbit and tarragon salad.jpg">
+                <h4>Rabbit and Tarragon Salad</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Salmon and chocolate crepes.png">
+                <h4>Salmon and Chocolate Crepes</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Socca and chorizo salad.jpg">
+                <h4>Socca and Chorizo Salad</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Turkey and shrimp soup.jpg">
+                <h4>Turkey and Shrimp Soup</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Ugli fruit and coconut milk salad.jpg">
+                <h4>Ugli Fruit and Coconut Milk Salad</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+            <div class="item">
+                <image src="Images\Vacherin and red onion salad.jpg">
+                <h4>Vacherin and Red Onion Salad</h4>
+                <div class="opt">
+                    <form action="" method="post">
+                      <input type="button" value="Order Now">
+                    </form> 
+                </div>
+            </div>
+    </body>
+</html>
