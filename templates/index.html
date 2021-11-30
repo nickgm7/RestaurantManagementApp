@@ -1,51 +1,104 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="../static/style.css" />
-        <title>Restaurant</title>
+        <style>
+
+          body{
+            font-family: latha;
+            color:white;
+            background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65),rgba(0,0,0,0.39),rgba(0,0,0,0))no-repeat
+            , url(foodpic.jpg)no-repeat;
+            background-size: cover;
+          }
+
+
+          .box{ width: 900px;
+          float:right;
+          border:1px solid black;}
+
+          .box ul li{
+            width: 120px;
+            float:left;
+            margin: 10px auto;
+            text-align: center;}
+
+          .box ul li a{
+            text-decoration: none;
+            color:darkgray;}
+
+          .box ul li:hover{background-color: salmon;}
+          .box ul li a:hover{ color:white;}
+
+          .wd{
+            width: 300px;
+            height: 539px;
+            background-color: black;
+            opacity: 0.9;
+            padding: 55px;
+            
+            }
+
+          .wd h1{
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 100px;
+           }
+
+          .wd h4{
+            text-align: justify;
+            color: darkgray;
+            font-weight: normal;
+          }
+
+          .wd h2{
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: normal;
+            margin: 40px auto;
+          }
+
+          .opt form input[type="button"]{
+            background-color: black;
+            color:white;
+            padding: 12px;
+            margin: auto;
+            padding-left: 50px;
+            padding-right: 50px;
+            text-align: center;
+          }
+
+          .opt form input[type="button"]:hover{background-color: salmon;}
+          
+        </style>
       </head>
       <body>
-        <div class="container">
-          
-          <form action="/submit" method="POST">
-            <div class="form-group">
-              <h3>Customer Name</h3>
-              <input
-                type="text"
-                name="customer"
-                placeholder="Name"
-              />
-            </div>
-            <div class="form-group">
-              <h3>Meals</h3>
-              <select name="dealer">
-                <option value="">Select Meal</option>
-                <option value="Egg Soup">Egg Soup</option>
-                <option value="Grilled Cheese">Grilled Cheese</option>
-                <option value="Jumbo Burger">Jumbo Burger</option>
-                <option value="Shrimp Stirfry">Shrimp Stirfry</option>
-              </select>
-            </div>
+        <div class="box">
+          <ul type="none">
+            <li><a href=""> Home</a></li>
+            <li><a href=""> Menu</a></li>
+            <li><a href=""> Order</a></li>
+            <li><a href=""> Login</a></li>
+          </ul>
+        </div>
+
+        <div class="wd">
+
+          <h1> Welcome! </h1>
+
+          <h4> We are happy to bring you our wide selection of 
+            hand picked and crafted meals. 
+            You won't get a dining experience
+            like this anywhere else.
+          </h4>
+
+          <h2> Order </h2>
+          <div class="opt">
+            <form action="" method="post">
+              <input type="button" value="Order Now">
+            </form>
             
-            <div class="form-group">
-              <h3>Special Instructions</h3>
-              <textarea
-                name="comments"
-                id=""
-                cols="30"
-                rows="5"
-                placeholder="Tell us any special instructions"
-              ></textarea>
-            </div>
-            <input type="Add to Cart" value="Add to Cart" class="btn" />
-          </form>
+          </div>
+
         </div>
       </body>
 </html>
