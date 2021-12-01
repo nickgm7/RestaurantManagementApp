@@ -6,8 +6,15 @@
             *{
                 margin: 0px;
                 padding: 0px;
+                /* background-color: #444444; */
                 font-family: sans-serif;
+                color:wheat;
                 box-sizing: border-box;
+            }
+            body{
+                background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65),rgba(0,0,0,0.39),rgba(0,0,0,0))no-repeat
+                , url(static/foodpic.jpg)no-repeat;
+                background-size: cover;
             }
             h1{
                 text-align: center;
@@ -32,6 +39,24 @@
             nav ul a:hover{
                 color: white;
             }
+
+            .box{ width: 990px;
+                float:right;
+            }
+            .box ul li{
+                width: 120px;
+                float:left;
+                margin: 10px auto;
+                text-align: center;
+            }
+            .box ul li a{
+                text-decoration: none;
+                color:darkgray;
+            }
+            ul li:hover{
+                background-color: salmon;
+            }
+
             .items{
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -83,17 +108,17 @@
         <nav>
         <div class="box">
             <ul type="none">
-              <a href=""> <li>Home</li></a>
-              <a href=""> <li>Menu</li></a>
-              <a href=""> <li>Order</li></a>
-              <a href=""> <li>Login</li></a>
+              <a href="/"> <li>Home</li></a>
+              <a href="order"> <li>Menu</li></a>
+              <a href="order"> <li>Order</li></a>
+              <a href="login"> <li>Login</li></a>
             </ul>
         </div>
         </nav>
 
         <section class="items">
             <div class="item">
-                <image src="Images\Almond and banana biscuits.png">
+                <image src="static\Almond and banana biscuits.png">
                 <h4>Almond and Banana Biscuits</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -102,7 +127,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Bean and pesto lasagne.jpg">
+                <image src="static\Bean and pesto lasagne.jpg">
                 <h4>Bean and Pesto Lasagne</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -111,7 +136,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Cannellini and artichoke soup.jpg">
+                <image src="static\Cannellini and artichoke soup.jpg">
                 <h4>Cannellini and Artichoke Soup</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -120,7 +145,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Chicken and egg spaghetti.jpg">
+                <image src="static\Chicken and egg spaghetti.jpg">
                 <h4>Chicken and Egg Spaghetti</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -129,7 +154,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Date and mandarin salad.png">
+                <image src="static\Date and mandarin salad.png">
                 <h4>Date and Mandarin Salad</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -138,7 +163,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Egg and apple pizza.jpg">
+                <image src="static\Egg and apple pizza.jpg">
                 <h4>Egg and Apple Pizza</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -147,7 +172,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Jaggery and pepper salad.jpg">
+                <image src="static\Jaggery and pepper salad.jpg">
                 <h4>Jaggery and Pepper Salad</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -156,7 +181,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Lamb and olive fusilli.jpg">
+                <image src="static\Lamb and olive fusilli.jpg">
                 <h4>Lamb and Olive Fusilli</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -165,7 +190,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Lemon and bacon cupcakes.jpg">
+                <image src="static\Lemon and bacon cupcakes.jpg">
                 <h4>Lemon and Bacon Cupcakes</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -174,7 +199,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Mackerel and camembert salad.jpg">
+                <image src="static\Mackerel and camembert salad.jpg">
                 <h4>Mackerel and Camembert Salad</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -183,7 +208,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Milk chocolate and sultana cookies.jpg">
+                <image src="static\Milk chocolate and sultana cookies.jpg">
                 <h4>Milk Chocolate and Sultana Cookies</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -192,7 +217,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Mortadella and chocolate mousse.jpg">
+                <image src="static\Mortadella and chocolate mousse.jpg">
                 <h4>Mortadella and Chocolate Mousse</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -201,7 +226,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Okra and shallot stir fry.jpg">
+                <image src="static\Okra and shallot stir fry.jpg">
                 <h4>Okra and Shallot Stir Fry</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -210,7 +235,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Pepper and crayfish bagel.jpg">
+                <image src="static\Pepper and crayfish bagel.jpg">
                 <h4>Pepper and Crayfish Bagel</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -219,7 +244,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Rabbit and tarragon salad.jpg">
+                <image src="static\Rabbit and tarragon salad.jpg">
                 <h4>Rabbit and Tarragon Salad</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -228,7 +253,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Salmon and chocolate crepes.png">
+                <image src="static\Salmon and chocolate crepes.png">
                 <h4>Salmon and Chocolate Crepes</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -237,7 +262,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Socca and chorizo salad.jpg">
+                <image src="static\Socca and chorizo salad.jpg">
                 <h4>Socca and Chorizo Salad</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -246,7 +271,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Turkey and shrimp soup.jpg">
+                <image src="static\Turkey and shrimp soup.jpg">
                 <h4>Turkey and Shrimp Soup</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -255,7 +280,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Ugli fruit and coconut milk salad.jpg">
+                <image src="static\Ugli fruit and coconut milk salad.jpg">
                 <h4>Ugli Fruit and Coconut Milk Salad</h4>
                 <div class="opt">
                     <form action="" method="post">
@@ -264,7 +289,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="Images\Vacherin and red onion salad.jpg">
+                <image src="static\Vacherin and red onion salad.jpg">
                 <h4>Vacherin and Red Onion Salad</h4>
                 <div class="opt">
                     <form action="" method="post">
