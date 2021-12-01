@@ -6,8 +6,14 @@
             *{
                 margin: 0px;
                 padding: 0px;
+                /* background-color: #444444; */
                 font-family: sans-serif;
                 box-sizing: border-box;
+            }
+            body{
+                background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65),rgba(0,0,0,0.39),rgba(0,0,0,0))no-repeat
+                , url(foodpic.jpg)no-repeat;
+                background-size: cover;
             }
             h1{
                 text-align: center;
@@ -32,6 +38,24 @@
             nav ul a:hover{
                 color: white;
             }
+
+            .box{ width: 990px;
+                float:right;
+            }
+            .box ul li{
+                width: 120px;
+                float:left;
+                margin: 10px auto;
+                text-align: center;
+            }
+            .box ul li a{
+                text-decoration: none;
+                color:darkgray;
+            }
+            ul li:hover{
+                background-color: salmon;
+            }
+
             .items{
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -83,10 +107,10 @@
         <nav>
         <div class="box">
             <ul type="none">
-              <a href=""> <li>Home</li></a>
-              <a href=""> <li>Menu</li></a>
-              <a href=""> <li>Order</li></a>
-              <a href=""> <li>Login</li></a>
+              <a href="index.html"> <li>Home</li></a>
+              <a href="order.html"> <li>Menu</li></a>
+              <a href="order.html"> <li>Order</li></a>
+              <a href="login.html"> <li>Login</li></a>
             </ul>
         </div>
         </nav>
