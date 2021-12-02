@@ -101,7 +101,7 @@ class Ingredient(db.Model):
     inventory = db.Column(db.Integer)
     
     def __init__(self, ingredient_id, name, inventory):
-        self.ingredient_id
+        self.ingredient_id = ingredient_id
         self.name = name
         self.inventory = inventory
         
@@ -142,6 +142,98 @@ def addChef():
     dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
     chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
 
+@app.route('/submitWaiter', methods=['GET', 'POST'])
+def addWaiter():
+    if request.method == 'POST':
+        waiter_id = request.form['waiter_id']
+        name = request.form['name']
+        salary = request.form['salary']
+        if db.session.query(Waiter).filter(Waiter.waiter_id == waiter_id).count() == 0:
+            new_entry = Waiter(waiter_id, name, salary)
+            db.session.add(new_entry)
+            db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+
+@app.route('/submitManager', methods=['GET', 'POST'])
+def addManager():
+    if request.method == 'POST':
+        manager_id = request.form['manager_id']
+        name = request.form['name']
+        salary = request.form['salary']
+        if db.session.query(Manager).filter(Manager.manager_id == manager_id).count() == 0:
+            new_entry = Manager(manager_id, name, salary)
+            db.session.add(new_entry)
+            db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+
+@app.route('/submitCustomer', methods=['GET', 'POST'])
+def addCustomer():
+    if request.method == 'POST':
+        customer_id = request.form['customer_id']
+        name = request.form['name']
+        address = request.form['address']
+        phone_num = request.form['phone_num']
+        if db.session.query(Customer).filter(Customer.customer_id == customer_id).count() == 0:
+            new_entry = Customer(customer_id, name, address, phone_num)
+            db.session.add(new_entry)
+            db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+
+@app.route('/submitDish', methods=['GET', 'POST'])
+def addDish():
+    if request.method == 'POST':
+        dish_id = request.form['dish_id']
+        name = request.form['name']
+        description = request.form['description']
+        price = request.form['price']
+        if db.session.query(Dish).filter(Dish.dish_id == dish_id).count() == 0:
+            new_entry = Dish(dish_id, name, description, price)
+            db.session.add(new_entry)
+            db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+
+@app.route('/submitIngredient', methods=['GET', 'POST'])
+def addIngredient():
+    if request.method == 'POST':
+        ingredient_id = request.form['i_id']
+        name = request.form['name']
+        inventory = request.form['qty']
+        if db.session.query(Ingredient).filter(Ingredient.ingredient_id == ingredient_id).count() == 0:
+            new_entry = Ingredient(ingredient_id, name, inventory)
+            db.session.add(new_entry)
+            db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+
+@app.route('/submitSupplier', methods=['GET', 'POST'])
+def addSupplier():
+    if request.method == 'POST':
+        supplier_id = request.form['supplier_id']
+        name = request.form['name']
+        city = request.form['city']
+        phone_num = request.form['phone_num']
+        if db.session.query(Supplier).filter(Supplier.supplier_id == supplier_id).count() == 0:
+            new_entry = Supplier(supplier_id, name,city, phone_num)
+            db.session.add(new_entry)
+            db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
 
 @app.route('/manager', methods=['GET', 'POST'])
 def manager():
