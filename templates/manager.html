@@ -5,12 +5,39 @@
 
           body{
             font-family: Arial, Helvetica, sans-serif;
-            color:black;
+            color:wheat;
             background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65),rgba(0,0,0,0.39),rgba(0,0,0,0))no-repeat
             , url(static/foodpic.jpg)no-repeat;
             background-size: cover;
           }
+          .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 10px;
+          }
+          .grid-item {
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+          }
+          .form-group{
+            width: 300px;
+            float: center;
+            margin: 10px auto;
+            text-align: center;
+          }
+          table {
+              table-layout: fixed;
+            width: 100%;
+          }
 
+          td {
+            border: 1px solid blue;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
           h2{
             color:#000;
             text-align:center;
@@ -32,7 +59,7 @@
             box-shadow: 0 0.5rem 0.8rem #00000080;
           }
           .panels{
-            background:#fffffff6;
+            background:darkslategray;
             box-shadow: 0 2rem 2rem #00000080;
             min-height:600px;
             width:100%;
@@ -99,8 +126,27 @@
 
           .box ul li:hover{background-color: salmon;}
           .box ul li a:hover{ color:white;}
-
-         
+          
+          .header{ 
+            width: 500px;
+            float: center;
+            margin: 10px auto;
+            text-align: center;
+          }
+          .form-group{
+            grid-area: menu;
+            width: 300px;
+            float: center;
+            margin: 10px auto;
+            text-align: center;
+          }
+          .submit{
+            grid-area: menu;
+            width: 200px;
+            float: center;
+            margin: 10px auto;
+            text-align: center;
+          }
         </style>
       </head>
       <body>
@@ -131,39 +177,393 @@
               </div>
             <div class="panels">
             <div class="panel" id="one-panel">
-              <div class="panel-title">title</div>
-              <p>Insert table</p>
-            </div>
-            <div class="panel" id="two-panel">
-              <div class="panel-title">title</div>
-              <p>Insert table</p>
-            </div>
-            <div class="panel" id="three-panel">
-              <div class="panel-title">title</div>
-              <p>Insert table</p>
-            </div>
-            <div class="panel" id="four-panel">
-              <div class="panel-title">title</div>
-              <p>Insert table</p>
-            </div>
-            <div class="panel" id="five-panel">
-              <div class="panel-title">title</div>
-              <p>Insert table</p>
-            </div>
-            <div class="panel" id="six-panel">
-              <div class="panel-title">title</div>
-              <p>Insert table</p>
-            </div>
-            <div class="panel" id="seven-panel">
-              <div class="panel-title">title</div>
-              <p>Insert table</p>
-            </div>
-            <div class="panel" id="eight-panel">
-              <div class="panel-title">title</div>
-              <p>Insert table</p>
+              <div class="panel-title"></div>
+              <div class="grid-container">
+                <div class="grid-item">
+                  <h1>Fake Table </h1>
+                  <table>
+                    <tr><td>First Name</td><td>Last Name</td></tr>
+                    <tr><td>Ed</td><td>Wood</td></tr>
+                    <tr><td>Albert</td><td>Schweitzer</td></tr>
+                    <tr><td>Jane</td><td>Fonda</td></tr>
+                    <tr><td>William</td><td>Shakespeare</td></tr>
+                </table>
+                </div>
+                <div class="grid-item">
+              <form action="/submit" method="POST">
+                <div class="form-group">
+                  <h3>Chef ID</h3>
+                  <input
+                    type="text"
+                    name="customer_id"
+                    placeholder="chef id"
+                  />
+                </div>
+                <div class="form-group">
+                    <h3>Chef Name</h3>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="name"
+                    />
+                </div>
+                <div class="form-group">
+                    <h3>Chef Salary</h3>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="salary"
+                    />
+                  </div> 
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn" />
+                </div>
+              </form>
             </div>
             </div>
           </div>
-        
+            <div class="panel" id="two-panel">
+              <div class="panel-title"></div>
+              <div class="grid-container">
+                <div class="grid-item">
+                  <h1>Fake Table </h1>
+                  <table>
+                    <tr><td>First Name</td><td>Last Name</td></tr>
+                    <tr><td>Ed</td><td>Wood</td></tr>
+                    <tr><td>Albert</td><td>Schweitzer</td></tr>
+                    <tr><td>Jane</td><td>Fonda</td></tr>
+                    <tr><td>William</td><td>Shakespeare</td></tr>
+                </table>
+                </div>
+                <div class="grid-item">
+              <form action="/submit" method="POST">
+                <div class="form-group">
+                  <h3>Waiter ID</h3>
+                  <input
+                    type="text"
+                    name="customer_id"
+                    placeholder="waiter id"
+                  />
+                </div>
+                <div class="form-group">
+                    <h3>Waiter Name</h3>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="name"
+                    />
+                </div>
+                <div class="form-group">
+                    <h3>Waiter Salary</h3>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="salary"
+                    />
+                  </div> 
+                  <div class="form-group">
+                    <input type="submit" value="Submit" class="btn" />
+                    </div>
+                  </form>
+                </div>
+                  </div>
+            </div>
+            <div class="panel" id="three-panel">
+              <div class="panel-title"></div>
+              <div class="grid-container">
+                <div class="grid-item">
+                  <h1>Fake Table </h1>
+                  <table>
+                    <tr><td>First Name</td><td>Last Name</td></tr>
+                    <tr><td>Ed</td><td>Wood</td></tr>
+                    <tr><td>Albert</td><td>Schweitzer</td></tr>
+                    <tr><td>Jane</td><td>Fonda</td></tr>
+                    <tr><td>William</td><td>Shakespeare</td></tr>
+                </table>
+                </div>
+                <div class="grid-item">
+              <form action="/submit" method="POST">
+                <div class="form-group">
+                  <h3>Manager ID</h3>
+                  <input
+                    type="text"
+                    name="customer_id"
+                    placeholder="manager id"
+                  />
+                </div>
+                <div class="form-group">
+                    <h3>Manager Name</h3>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="name"
+                    />
+                </div>
+                <div class="form-group">
+                    <h3>Manager Salary</h3>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="salary"
+                    />
+                  </div> 
+                  <div class="form-group">
+                    <input type="submit" value="Submit" class="btn" />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="panel" id="four-panel">
+              <div class="panel-title"></div>
+              <div class="grid-container">
+                <div class="grid-item">
+                  <h1>Fake Table </h1>
+                  <table>
+                    <tr><td>First Name</td><td>Last Name</td></tr>
+                    <tr><td>Ed</td><td>Wood</td></tr>
+                    <tr><td>Albert</td><td>Schweitzer</td></tr>
+                    <tr><td>Jane</td><td>Fonda</td></tr>
+                    <tr><td>William</td><td>Shakespeare</td></tr>
+                </table>
+                </div>
+                <div class="grid-item">
+              <form action="/submit" method="POST">
+                <div class="form-group">
+                  <h3>Customer ID</h3>
+                  <input
+                    type="text"
+                    name="customer_id"
+                    placeholder="customer id"
+                  />
+                </div>
+                <div class="form-group">
+                    <h3>Customer Name</h3>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="name"
+                    />
+                </div>
+                <div class="form-group">
+                    <h3>Customer Address</h3>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="address"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <h3>Customer Phone Number</h3>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="phone number"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" value="Submit" class="btn" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+            <div class="panel" id="five-panel">
+              <div class="panel-title"></div>
+              <div class="grid-container">
+                <div class="grid-item">
+                  <h1>Fake Table </h1>
+                  <table>
+                    <tr><td>First Name</td><td>Last Name</td></tr>
+                    <tr><td>Ed</td><td>Wood</td></tr>
+                    <tr><td>Albert</td><td>Schweitzer</td></tr>
+                    <tr><td>Jane</td><td>Fonda</td></tr>
+                    <tr><td>William</td><td>Shakespeare</td></tr>
+                </table>
+                </div>
+                <div class="grid-item">
+              <form action="/submit" method="POST">
+                <div class="form-group">
+                  <h3>Dish ID</h3>
+                  <input
+                    type="text"
+                    name="customer_id"
+                    placeholder="dish id"
+                  />
+                </div>
+                <div class="form-group">
+                    <h3>Dish Name</h3>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="name"
+                    />
+                </div>
+                <div class="form-group">
+                    <h3>Dish Description</h3>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="description"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <h3>Dish Price</h3>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="price"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" value="Submit" class="btn" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+            <div class="panel" id="six-panel">
+              <div class="panel-title"></div>
+              <div class="grid-container">
+                <div class="grid-item">
+                  <h1>Fake Table </h1>
+                  <table>
+                    <tr><td>First Name</td><td>Last Name</td></tr>
+                    <tr><td>Ed</td><td>Wood</td></tr>
+                    <tr><td>Albert</td><td>Schweitzer</td></tr>
+                    <tr><td>Jane</td><td>Fonda</td></tr>
+                    <tr><td>William</td><td>Shakespeare</td></tr>
+                </table>
+                </div>
+                <div class="grid-item">
+              <form action="/submit" method="POST">
+                <div class="form-group">
+                  <h3>Ingredient ID</h3>
+                  <input
+                    type="text"
+                    name="customer_id"
+                    placeholder="ingredient id"
+                  />
+                </div>
+                <div class="form-group">
+                    <h3>Ingredient Name</h3>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="name"
+                    />
+                </div>
+                <div class="form-group">
+                    <h3>Ingredient Inventory</h3>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="qty"
+                    />
+                  </div>
+                  
+                  <div class="form-group">
+                    <input type="submit" value="Submit" class="btn" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+            <div class="panel" id="seven-panel">
+              <div class="panel-title"></div>
+              <div class="grid-container">
+                <div class="grid-item">
+                  <h1>Fake Table </h1>
+                  <table>
+                    <tr><td>First Name</td><td>Last Name</td></tr>
+                    <tr><td>Ed</td><td>Wood</td></tr>
+                    <tr><td>Albert</td><td>Schweitzer</td></tr>
+                    <tr><td>Jane</td><td>Fonda</td></tr>
+                    <tr><td>William</td><td>Shakespeare</td></tr>
+                </table>
+                </div>
+                <div class="grid-item">
+              <form action="/submit" method="POST">
+                <div class="form-group">
+                  <h3>Supplier ID</h3>
+                  <input
+                    type="text"
+                    name="customer_id"
+                    placeholder="supplier id"
+                  />
+                </div>
+                <div class="form-group">
+                    <h3>Supplier Name</h3>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="name"
+                    />
+                </div>
+                <div class="form-group">
+                    <h3>Supplier Address</h3>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="address"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <h3>Supplier Phone Number</h3>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="phone number"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" value="Submit" class="btn" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+            <div class="panel" id="eight-panel">
+              <div class="panel-title"></div>
+              <div class="grid-container">
+                <div class="grid-item">
+                  <h1>Fake Table </h1>
+                  <table>
+                    <tr><td>First Name</td><td>Last Name</td></tr>
+                    <tr><td>Ed</td><td>Wood</td></tr>
+                    <tr><td>Albert</td><td>Schweitzer</td></tr>
+                    <tr><td>Jane</td><td>Fonda</td></tr>
+                    <tr><td>William</td><td>Shakespeare</td></tr>
+                </table>
+                </div>
+                <div class="grid-item">
+              <form action="/submit" method="POST">
+                <div class="form-group">
+                  <h3>Customer ID</h3>
+                  <input
+                    type="text"
+                    name="customer_id"
+                    placeholder="customer id"
+                  />
+                </div>
+                <div class="form-group">
+                    <h3>Dish Name</h3>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="dish id"
+                    />
+                </div>
+                
+                  <div class="form-group">
+                    <input type="submit" value="Submit" class="btn" />
+                  </div>
+                </form>
+              </div>
+            </div>
+            </div>
+          </div>
+          </div>
+          
       </body>
 </html>
