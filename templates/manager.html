@@ -180,13 +180,14 @@
               <div class="panel-title"></div>
               <div class="grid-container">
                 <div class="grid-item">
-                  <h1>Fake Table </h1>
-                  <table>
-                    <tr><td>First Name</td><td>Last Name</td></tr>
-                    <tr><td>Ed</td><td>Wood</td></tr>
-                    <tr><td>Albert</td><td>Schweitzer</td></tr>
-                    <tr><td>Jane</td><td>Fonda</td></tr>
-                    <tr><td>William</td><td>Shakespeare</td></tr>
+                  <h1>Chef Table </h1>
+                  <table border = 1>
+                    {% for user in chefDetails %}
+                    <tr>
+                      <td> {{user[0]}} </td>
+                      <td> {{user[1]}} </td>
+                      <td> {{user[2]}} </td>
+                    </tr>
                 </table>
                 </div>
                 <div class="grid-item">
