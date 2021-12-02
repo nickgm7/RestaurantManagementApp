@@ -30,10 +30,19 @@ def order():
     return render_template('order.html')
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Invalid Credentials. Please try again.'
+        else:
+            return redirect(url_for('/'))
+    return render_template('login.html', error=error)
 
+@app.route('/signUp', methods=['GET', 'POST'])
+def signUp():
+    return render_template('signUp.html')
 
 @app.route('/manager')
 def manager():
