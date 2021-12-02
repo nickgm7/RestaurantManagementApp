@@ -20,9 +20,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-engine = create_engine(app)
-connection = engine.raw_connection()
-cursor = connection.cursor()
+
 
 # session = db.session()
 # cursor = session.execute(app).cursor
