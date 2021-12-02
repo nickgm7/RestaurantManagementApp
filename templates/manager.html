@@ -13,12 +13,13 @@
           .grid-container {
             display: grid;
             grid-template-columns: auto auto auto;
+            justify-content: space-evenly;
             padding: 10px;
           }
           .grid-item {
             border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            font-size: 30px;
+            padding: 5px;
+            font-size: 10px;
             text-align: center;
           }
           .form-group{
@@ -28,8 +29,10 @@
             text-align: center;
           }
           table {
-              table-layout: fixed;
-            width: 100%;
+            overflow-y: scroll;
+            height: 300px;
+            
+            display: block;  
           }
 
           td {
@@ -135,14 +138,14 @@
           }
           .form-group{
             grid-area: menu;
-            width: 300px;
+            width: auto;
             float: center;
             margin: 10px auto;
             text-align: center;
           }
           .submit{
             grid-area: menu;
-            width: 200px;
+            width: auto;
             float: center;
             margin: 10px auto;
             text-align: center;
@@ -180,22 +183,22 @@
               <div class="panel-title"></div>
               <div class="grid-container">
                 <div class="grid-item">
-                  <h1>Fake Table </h1>
+                  <h1>Chef Table</h1>
                   <table>
-                    <tr><td>First Name</td><td>Last Name</td></tr>
-                    <tr><td>Ed</td><td>Wood</td></tr>
-                    <tr><td>Albert</td><td>Schweitzer</td></tr>
-                    <tr><td>Jane</td><td>Fonda</td></tr>
-                    <tr><td>William</td><td>Shakespeare</td></tr>
+                    <tr> <th>Chef_ID</th> <th>Name</th> <th>Salary</th></tr>
+                      {% for item in chef_table %}
+                       <tr><td>{{item.chef_id}}</td> <td>{{item.name}}</td> <td>{{item.salary}}</td> <tr>
+                      {%endfor%}
+                   
                 </table>
                 </div>
                 <div class="grid-item">
-              <form action="/submit" method="POST">
+              <form action="/submitChef" method="POST">
                 <div class="form-group">
                   <h3>Chef ID</h3>
                   <input
                     type="text"
-                    name="customer_id"
+                    name="chef_id"
                     placeholder="chef id"
                   />
                 </div>
@@ -211,7 +214,7 @@
                     <h3>Chef Salary</h3>
                     <input
                       type="text"
-                      name="address"
+                      name="salary"
                       placeholder="salary"
                     />
                   </div> 
@@ -226,13 +229,12 @@
               <div class="panel-title"></div>
               <div class="grid-container">
                 <div class="grid-item">
-                  <h1>Fake Table </h1>
+                  <h1>Waiter Table</h1>
                   <table>
-                    <tr><td>First Name</td><td>Last Name</td></tr>
-                    <tr><td>Ed</td><td>Wood</td></tr>
-                    <tr><td>Albert</td><td>Schweitzer</td></tr>
-                    <tr><td>Jane</td><td>Fonda</td></tr>
-                    <tr><td>William</td><td>Shakespeare</td></tr>
+                    <tr> <th>Waiter_ID</th> <th>Name</th> <th>Salary</th></tr>
+                      {% for item in waiter_table %}
+                       <tr><td>{{item.waiter_id}}</td> <td>{{item.name}}</td> <td>{{item.salary}}</td> <tr>
+                      {%endfor%}
                 </table>
                 </div>
                 <div class="grid-item">
@@ -272,13 +274,12 @@
               <div class="panel-title"></div>
               <div class="grid-container">
                 <div class="grid-item">
-                  <h1>Fake Table </h1>
-                  <table>
-                    <tr><td>First Name</td><td>Last Name</td></tr>
-                    <tr><td>Ed</td><td>Wood</td></tr>
-                    <tr><td>Albert</td><td>Schweitzer</td></tr>
-                    <tr><td>Jane</td><td>Fonda</td></tr>
-                    <tr><td>William</td><td>Shakespeare</td></tr>
+                  <h1>Manager Table </h1>
+                    <table>
+                      <tr> <th>Manager_ID</th> <th>name</th> <th>salary</th></tr>
+                      {% for item in manager_table %}
+                       <tr><td>{{item.manager_id}}</td> <td>{{item.name}}</td> <td>{{item.salary}}</td> <tr>
+                      {%endfor%}
                 </table>
                 </div>
                 <div class="grid-item">
@@ -318,13 +319,22 @@
               <div class="panel-title"></div>
               <div class="grid-container">
                 <div class="grid-item">
-                  <h1>Fake Table </h1>
+                  <h1>Customer Table </h1>
                   <table>
-                    <tr><td>First Name</td><td>Last Name</td></tr>
-                    <tr><td>Ed</td><td>Wood</td></tr>
-                    <tr><td>Albert</td><td>Schweitzer</td></tr>
-                    <tr><td>Jane</td><td>Fonda</td></tr>
-                    <tr><td>William</td><td>Shakespeare</td></tr>
+                    <tr> <th>Customer_ID</th> 
+                      <th>name</th> 
+                      <th>address</th> 
+                      <th>phone_num</th>
+                    </tr>
+                    {% for item in customer_table %}
+                     <tr>
+                      <td>{{item.customer_id}}</td> 
+                      <td>{{item.name}}</td> 
+                      <td>{{item.address}}</td>
+                      <td>{{item.phone_num}}</td> 
+                      <tr>
+                    {%endfor%}
+                    
                 </table>
                 </div>
                 <div class="grid-item">
@@ -372,13 +382,12 @@
               <div class="panel-title"></div>
               <div class="grid-container">
                 <div class="grid-item">
-                  <h1>Fake Table </h1>
+                  <h1>Dish Table </h1>
                   <table>
-                    <tr><td>First Name</td><td>Last Name</td></tr>
-                    <tr><td>Ed</td><td>Wood</td></tr>
-                    <tr><td>Albert</td><td>Schweitzer</td></tr>
-                    <tr><td>Jane</td><td>Fonda</td></tr>
-                    <tr><td>William</td><td>Shakespeare</td></tr>
+                    <tr> <th>Dish_ID</th> <th>Name</th> <th>Description</th> <th>Price</th> </tr>
+                    {% for item in dish_table %}
+                     <tr><td>{{item.dish_id}}</td> <td>{{item.name}}</td> <td>{{item.description}}</td> <td>{{item.price}}</td><tr>
+                    {%endfor%}
                 </table>
                 </div>
                 <div class="grid-item">
@@ -426,13 +435,11 @@
               <div class="panel-title"></div>
               <div class="grid-container">
                 <div class="grid-item">
-                  <h1>Fake Table </h1>
-                  <table>
-                    <tr><td>First Name</td><td>Last Name</td></tr>
-                    <tr><td>Ed</td><td>Wood</td></tr>
-                    <tr><td>Albert</td><td>Schweitzer</td></tr>
-                    <tr><td>Jane</td><td>Fonda</td></tr>
-                    <tr><td>William</td><td>Shakespeare</td></tr>
+                 <table>
+                  <tr> <th>Ingredient_ID</th> <th>name</th> <th>Inventory</th></tr>
+                      {% for item in ingredient_table %}
+                       <tr><td>{{item.ingredient_id}}</td> <td>{{item.name}}</td> <td>{{item.inventory}}</td> <tr>
+                      {%endfor%}
                 </table>
                 </div>
                 <div class="grid-item">
@@ -473,13 +480,16 @@
               <div class="panel-title"></div>
               <div class="grid-container">
                 <div class="grid-item">
-                  <h1>Fake Table </h1>
+                  <h1>Supplier Table </h1>
                   <table>
-                    <tr><td>First Name</td><td>Last Name</td></tr>
-                    <tr><td>Ed</td><td>Wood</td></tr>
-                    <tr><td>Albert</td><td>Schweitzer</td></tr>
-                    <tr><td>Jane</td><td>Fonda</td></tr>
-                    <tr><td>William</td><td>Shakespeare</td></tr>
+                    <tr> <th>Supplier_ID</th> <th>Name</th> <th>City</th>  <th>Phone_Num</th></tr>
+                      {% for item in manager_table %}
+                       <tr><td>{{item.supplier_id}}</td> <td>{{item.name}}</td> 
+                        <td>{{item.city}}</td> 
+                        <td>{{item.phone_num}}</td>
+                        <tr>
+                      {%endfor%}
+                    
                 </table>
                 </div>
                 <div class="grid-item">
@@ -527,7 +537,7 @@
               <div class="panel-title"></div>
               <div class="grid-container">
                 <div class="grid-item">
-                  <h1>Fake Table </h1>
+                  <h1>Order Table </h1>
                   <table>
                     <tr><td>First Name</td><td>Last Name</td></tr>
                     <tr><td>Ed</td><td>Wood</td></tr>
