@@ -22,9 +22,6 @@ db = SQLAlchemy(app)
 
 
 
-# session = db.session()
-# cursor = session.execute(app).cursor
-
 class Manager(db.Model):
     __tablename__ = 'manager'
     manager_id = db.Column(db.Integer, primary_key=True)
