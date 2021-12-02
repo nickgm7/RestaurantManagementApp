@@ -40,23 +40,11 @@ def login():
             return redirect(url_for('/'))
     return render_template('login.html', error=error)
 
-@app.route('/signUp', methods=['GET', 'POST'])
-def signUp():
-    return render_template('signUp.html')
 
 @app.route('/manager')
 def manager():
     return render_template('manager.html')
 
-
-@app.route('/staff')
-def staff():
-    return render_template('staff.html')
-
-
-@app.route('/supplier')
-def supplier():
-    return render_template('supplier.html')
 
 
 if __name__ == '__main__':
