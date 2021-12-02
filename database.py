@@ -48,6 +48,10 @@ def signUp():
 def manager():
     return render_template('manager.html')
 
+@app.route('/customerinfo')
+def customerinfo():
+    return render_template('customerinfo.html')
+
 
 @app.route('/staff')
 def staff():
