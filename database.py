@@ -242,10 +242,13 @@ def manager():
     dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
     chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
 
-@app.route('/customerinfo')
+@app.route('/customerInfo', methods=['GET', 'POST'])
 def customerinfo():
     return render_template('customerinfo.html')
 
+
+def addCustomerOrderInfo ():
+    pass
 
 
 if __name__ == '__main__':
