@@ -5,15 +5,86 @@
 
           body{
             font-family: Arial, Helvetica, sans-serif;
-            color:white;
+            color:black;
             background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65),rgba(0,0,0,0.39),rgba(0,0,0,0))no-repeat
             , url(static/foodpic.jpg)no-repeat;
             background-size: cover;
           }
 
-
-          .box{ width: 990px;
-            float:right;}
+          h2{
+            color:#000;
+            text-align:center;
+            font-size:2em;
+          }
+          .warpper{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .tab{
+            cursor: pointer;
+            padding:10px 20px;
+            margin:0px 2px;
+            background:salmon;
+            display:inline-block;
+            color:#fff;
+            border-radius:3px 3px 0px 0px;
+            box-shadow: 0 0.5rem 0.8rem #00000080;
+          }
+          .panels{
+            background:#fffffff6;
+            box-shadow: 0 2rem 2rem #00000080;
+            min-height:600px;
+            width:100%;
+            max-width:900px;
+            border-radius:3px;
+            overflow:hidden;
+            padding:20px;  
+          }
+          .panel{
+            display:none;
+            animation: fadein .8s;
+          }
+          @keyframes fadein {
+              from {
+                  opacity:0;
+              }
+              to {
+                  opacity:1;
+              }
+          }
+          .panel-title{
+            font-size:1.5em;
+            font-weight:bold
+          }
+          .radio{
+            display:none;
+          }
+          #one:checked ~ .panels #one-panel,
+          #two:checked ~ .panels #two-panel,
+          #three:checked ~ .panels #three-panel,
+          #four:checked ~ .panels #four-panel,
+          #five:checked ~ .panels #five-panel,
+          #six:checked ~ .panels #six-panel,
+          #seven:checked ~ .panels #seven-panel,
+          #eight:checked ~ .panels #eight-panel{
+            
+            display:block
+          }
+          #one:checked ~ .tabs #one-tab,
+          #two:checked ~ .tabs #two-tab,
+          #three:checked ~ .tabs #three-tab,
+          #four:checked ~ .tabs #four-tab,
+          #five:checked ~ .tabs #five-tab,
+          #six:checked ~ .tabs #six-tab,
+          #seven:checked ~ .tabs #seven-tab,
+          #eight:checked ~ .tabs #eight-tab{
+            background:darkslategray;
+            color:wheat;
+            border-top: 3px solid salmon;
+          }
+                    
+                    
 
           .box ul li{
             width: 120px;
@@ -22,27 +93,77 @@
             text-align: center;}
 
           .box ul li a{
+            position: 250px 125px;
             text-decoration: none;
             color:darkgray;}
 
           .box ul li:hover{background-color: salmon;}
           .box ul li a:hover{ color:white;}
 
-          
+         
         </style>
       </head>
       <body>
         <div class="box">
           <ul type="none">
             <li><a href="/"> Home</a></li>
-            <li><a href="manager"> Manager</a></li>
-            <li><a href="staff"> Staff</a></li>
-            <li><a href="supplier"> Supplier</a></li>
           </ul>
-        </div>
-
+        </div>    
         
-
-        </div>
+          <div class="warpper">
+            <input class="radio" id="one" name="group" type="radio" checked>
+            <input class="radio" id="two" name="group" type="radio">
+            <input class="radio" id="three" name="group" type="radio">
+            <input class="radio" id="four" name="group" type="radio">
+            <input class="radio" id="five" name="group" type="radio">
+            <input class="radio" id="six" name="group" type="radio">
+            <input class="radio" id="seven" name="group" type="radio">
+            <input class="radio" id="eight" name="group" type="radio">
+            <div class="tabs">
+            <label class="tab" id="one-tab" for="one">Chef</label>
+            <label class="tab" id="two-tab" for="two">Waiter</label>
+            <label class="tab" id="three-tab" for="three">Manager</label>
+            <label class="tab" id="four-tab" for="four">customer</label>
+            <label class="tab" id="five-tab" for="five">dish</label>
+            <label class="tab" id="six-tab" for="six">ingredient</label>
+            <label class="tab" id="seven-tab" for="seven">supplier</label>
+            <label class="tab" id="eight-tab" for="eight">order</label>
+              </div>
+            <div class="panels">
+            <div class="panel" id="one-panel">
+              <div class="panel-title">title</div>
+              <p>Insert table</p>
+            </div>
+            <div class="panel" id="two-panel">
+              <div class="panel-title">title</div>
+              <p>Insert table</p>
+            </div>
+            <div class="panel" id="three-panel">
+              <div class="panel-title">title</div>
+              <p>Insert table</p>
+            </div>
+            <div class="panel" id="four-panel">
+              <div class="panel-title">title</div>
+              <p>Insert table</p>
+            </div>
+            <div class="panel" id="five-panel">
+              <div class="panel-title">title</div>
+              <p>Insert table</p>
+            </div>
+            <div class="panel" id="six-panel">
+              <div class="panel-title">title</div>
+              <p>Insert table</p>
+            </div>
+            <div class="panel" id="seven-panel">
+              <div class="panel-title">title</div>
+              <p>Insert table</p>
+            </div>
+            <div class="panel" id="eight-panel">
+              <div class="panel-title">title</div>
+              <p>Insert table</p>
+            </div>
+            </div>
+          </div>
+        
       </body>
 </html>
