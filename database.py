@@ -127,13 +127,13 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/submit', methods=['POST'])
+@app.route('/authorizeLogin', methods=['POST'])
 def submit():
     if request.method == 'POST':
         user = request.form['userID']
         pw = request.form['password']
         if user == "admin" and pw == "admin":
-            return render_template('manager.html')
+            return redirect('/manager')
         # Error Message
         else:
             return render_template('login.html', message='Incorrect username or password')
