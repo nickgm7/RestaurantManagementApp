@@ -5,8 +5,6 @@ import os
 
 app = Flask(__name__)
 
-#app.config['SERVER_NAME'] = 'localhost:8000'
-
 ENV = 'dev'
 
 if ENV == 'dev':
@@ -114,7 +112,7 @@ class Order(db.Model):
         self.customer_id = customer_id
         self.dish_id = dish_id
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 
@@ -126,13 +124,19 @@ def order():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    error = None
+    return render_template('login.html')
+
+
+@app.route('/submit', methods=['POST'])
+def submit():
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = 'Invalid Credentials. Please try again.'
+        user = request.form['userID']
+        pw = request.form['password']
+        if user == "admin" and pw == "admin":
+            return render_template('manager.html')
+        # Error Message
         else:
-            return redirect(url_for('/'))
-    return render_template('login.html', error=error)
+            return render_template('login.html', message='Incorrect username or password')
 
 
 @app.route('/submitChef', methods=['GET', 'POST'])
@@ -368,7 +372,7 @@ def delOrder():
     dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
     chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
     order_table = Order.query.all())
-
+    
 @app.route('/manager', methods=['GET', 'POST'])
 def manager():
     return render_template('manager.html', manager_table = Manager.query.all(), 
@@ -384,6 +388,9 @@ def customerinfo():
         print(dish_id)
     return render_template('customerinfo.html')
 
+@app.route('/getCustomerInfo', methods=['GET', 'POST'])
+def thankyou():
+    return render_template('thankyou.html')
 
 def addCustomerOrderInfo ():
     pass
