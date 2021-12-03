@@ -40,51 +40,15 @@
     </style>
   </head>
   <body>
-    <div class="container">
     <div class="logo">
       <img src="static\Restaurant Logo.png" alt="" class="logo" />
     </div>
     <div class="header">
-        <h1>Customer Information</h1>
+        <h1>Thank You for Your Order!</h1>
     </div>
-      <form action="/getCustomerInfo" method="POST">
-        <div class="form-group">
-          <h3>Customer ID</h3>
-          <input
-            type="text"
-            name="customer_id"
-            placeholder="Customer ID"
-          />
-        </div>
-        <div class="form-group">
-            <h3>Customer Name</h3>
-            <input
-              type="text"
-              name="name"
-              placeholder="Customer Name"
-            />
-        </div>
-        <div class="form-group">
-            <h3>Customer Address</h3>
-            <input
-              type="text"
-              name="address"
-              placeholder="Customer Address"
-            />
-        </div>
-        <div class="form-group">
-              <h3>Customer Phone Number</h3>
-              <input
-                type="text"
-                name="phone_num"
-                placeholder="Customer Phone Number"
-              />
-        </div>
-        <div class="form-group">
-          <form action="thankyou.html" method="GET">
-            <input type="submit"/>
-          </form>
-        </div>
+    <div class="submit">    
+      <form action="/" method="post">
+        <input type="submit" value="Return"/>
       </form>
     </div>
   </body>

@@ -106,7 +106,7 @@ class Ingredient(db.Model):
         self.inventory = inventory
         
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 
@@ -246,6 +246,9 @@ def manager():
 def customerinfo():
     return render_template('customerinfo.html')
 
+@app.route('/getCustomerInfo', methods=['GET', 'POST'])
+def thankyou():
+    return render_template('thankyou.html')
 
 def addCustomerOrderInfo ():
     pass
