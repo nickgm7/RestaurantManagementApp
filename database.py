@@ -119,8 +119,6 @@ def index():
 
 @app.route('/order', methods=['GET', 'POST'])
 def order():
-    dishID = request.button['value']
-
     return render_template('order.html')
 
 
