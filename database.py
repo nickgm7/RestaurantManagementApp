@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request, url_for, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 import os
@@ -102,7 +102,15 @@ class Ingredient(db.Model):
         self.ingredient_id = ingredient_id
         self.name = name
         self.inventory = inventory
-        
+
+class Order(db.Model):
+    __tablename__ = 'order'
+    customer_id = db.Column(db.Integer, primary_key=True)
+    dish_id = db.Column(db.Integer)
+    
+    def __init__(self, customer_id, dish_id):
+        self.customer_id = customer_id
+        self.dish_id = dish_id
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -144,7 +152,21 @@ def addChef():
     return render_template('manager.html', manager_table = Manager.query.all(), 
     customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
     dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
-    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+    
+
+@app.route('/deleteChef', methods=['GET', 'POST'])
+def delChef():
+    if request.method == 'POST':
+        chef_id = request.form['chef_id']
+        chef_to_remove = db.session.query(Chef).filter(Chef.chef_id == chef_id).delete()
+        db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
 
 @app.route('/submitWaiter', methods=['GET', 'POST'])
 def addWaiter():
@@ -159,7 +181,22 @@ def addWaiter():
     return render_template('manager.html', manager_table = Manager.query.all(), 
     customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
     dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
-    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
+@app.route('/deleteWaiter', methods=['GET', 'POST'])
+def delWaiter():
+    if request.method == 'POST':
+        waiter_id = request.form['waiter_id']
+        db.session.query(Waiter).filter(Waiter.waiter_id == waiter_id).delete()
+        db.session.commit()
+
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
 
 @app.route('/submitManager', methods=['GET', 'POST'])
 def addManager():
@@ -174,7 +211,22 @@ def addManager():
     return render_template('manager.html', manager_table = Manager.query.all(), 
     customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
     dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
-    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
+@app.route('/deleteManager', methods=['GET', 'POST'])
+def delManager():
+    if request.method == 'POST':
+        manager_id = request.form['manager_id']
+        db.session.query(Manager).filter(Manager.manager_id == manager_id).delete()
+        db.session.commit()
+
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
 
 @app.route('/submitCustomer', methods=['GET', 'POST'])
 def addCustomer():
@@ -190,7 +242,21 @@ def addCustomer():
     return render_template('manager.html', manager_table = Manager.query.all(), 
     customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
     dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
-    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
+@app.route('/deleteCustomer', methods=['GET', 'POST'])
+def delCustomer():
+    if request.method == 'POST':
+        customer_id = request.form['customer_id']
+        db.session.query(Customer).filter(Customer.customer_id == customer_id).delete()
+        db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
 
 @app.route('/submitDish', methods=['GET', 'POST'])
 def addDish():
@@ -206,7 +272,21 @@ def addDish():
     return render_template('manager.html', manager_table = Manager.query.all(), 
     customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
     dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
-    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
+@app.route('/deleteDish', methods=['GET', 'POST'])
+def delDish():
+    if request.method == 'POST':
+        dish_id = request.form['dish_id']
+        db.session.query(Dish).filter(Dish.dish_id == dish_id).delete()
+        db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
 
 @app.route('/submitIngredient', methods=['GET', 'POST'])
 def addIngredient():
@@ -221,7 +301,20 @@ def addIngredient():
     return render_template('manager.html', manager_table = Manager.query.all(), 
     customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
     dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
-    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
+@app.route('/deleteIngredient', methods=['GET', 'POST'])
+def delIngredient():
+    if request.method == 'POST':
+        ingredient_id = request.form['ingredient_id']
+        db.session.query(Ingredient).filter(Ingredient.ingredient_id == ingredient_id).delete()
+        db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
 
 @app.route('/submitSupplier', methods=['GET', 'POST'])
 def addSupplier():
@@ -237,17 +330,62 @@ def addSupplier():
     return render_template('manager.html', manager_table = Manager.query.all(), 
     customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
     dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
-    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
-            
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
+@app.route('/deleteSupplier', methods=['GET', 'POST'])
+def delSupplier():
+    if request.method == 'POST':
+        supplier_id = request.form['supplier_id']
+        db.session.query(Supplier).filter(Supplier.supplier_id == supplier_id).delete()
+        db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
+@app.route('/submitOrder', methods=['GET', 'POST'])
+def addOrder():
+    if request.method == 'POST':
+        customer_id = request.form['customer_id']
+        dish_id = request.form['dish_id']
+        if db.session.query(Order).filter(Order.customer_id == customer_id, Order.dish_id == dish_id).count() == 0:
+            new_entry = Order(customer_id, dish_id)
+            db.session.add(new_entry)
+            db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+
+@app.route('/deleteOrder', methods=['GET', 'POST'])
+def delOrder():
+    if request.method == 'POST':
+        customer_id = request.form['customer_id']
+        dish_id = request.form['dish_id']
+        db.session.query(Order).filter(Order.dish_id == dish_id, Order.customer_id == customer_id).delete()
+        db.session.commit()
+    return render_template('manager.html', manager_table = Manager.query.all(), 
+    customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
+    dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
+    
 @app.route('/manager', methods=['GET', 'POST'])
 def manager():
     return render_template('manager.html', manager_table = Manager.query.all(), 
     customer_table = Customer.query.all(), waiter_table = Waiter.query.all(),
     dish_table = Dish.query.all(), supplier_table = Supplier.query.all(),
-    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all())
+    chef_table = Chef.query.all(), ingredient_table = Ingredient.query.all(),
+    order_table = Order.query.all())
 
 @app.route('/customerInfo', methods=['GET', 'POST'])
 def customerinfo():
+    if request.method == 'POST':
+        dish_id = request.form['dish_id']
+        print(dish_id)
     return render_template('customerinfo.html')
 
 @app.route('/getCustomerInfo', methods=['GET', 'POST'])
@@ -256,6 +394,7 @@ def thankyou():
 
 def addCustomerOrderInfo ():
     pass
+    Test
 
 
 if __name__ == '__main__':
