@@ -119,6 +119,8 @@ def index():
 
 @app.route('/order', methods=['GET', 'POST'])
 def order():
+    dishID = request.button['value']
+
     return render_template('order.html')
 
 
@@ -383,9 +385,9 @@ def manager():
 
 @app.route('/customerInfo', methods=['GET', 'POST'])
 def customerinfo():
-    if request.method == 'POST':
-        dish_id = request.form['dish_id']
-        print(dish_id)
+    #if request.method == 'POST':
+        #dish_id = request.form['dish_id']
+        #print(dish_id)
     return render_template('customerinfo.html')
 
 @app.route('/getCustomerInfo', methods=['GET', 'POST'])
