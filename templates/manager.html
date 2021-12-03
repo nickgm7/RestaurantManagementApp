@@ -189,11 +189,11 @@
                       {% for item in chef_table %}
                        <tr><td>{{item.chef_id}}</td> <td>{{item.name}}</td> <td>{{item.salary}}</td> <tr>
                       {%endfor%}
-                   
                 </table>
                 </div>
                 <div class="grid-item">
               <form action="/submitChef" method="POST">
+                <h1> Add a chef </h1>
                 <div class="form-group">
                   <h3>Chef ID</h3>
                   <input
@@ -222,6 +222,21 @@
                     <input type="submit" value="Submit" class="btn" />
                 </div>
               </form>
+            </div>
+            <div class="grid-item">
+              <form action="/deleteChef" method="POST">
+              <h1>delete a chef</h1>
+              <div class="form-group">
+                <h3>chef id</h3>
+                <input type = "text"
+                name = "chef_id"
+                placeholder="chef_id"
+                />
+              </div>
+              <div class="form-group">
+                <input type="submit" value="submit" class="btn" />
+              </div>
+              </form> 
             </div>
             </div>
           </div>
@@ -268,7 +283,23 @@
                     </div>
                   </form>
                 </div>
+                <div class="grid-item">
+                  <form action="/deleteWaiter" method="POST">
+                  <h1>delete a waiter</h1>
+                  <div class="form-group">
+                    <h3>waiter id</h3>
+                    <input type = "text"
+                    name = "waiter_id"
+                    placeholder="waiter_id"
+                    />
                   </div>
+                  <div class="form-group">
+                    <input type="submit" value="submit" class="btn" />
+                  </div>
+                  </form> 
+                </div>
+                </div>
+              
             </div>
             <div class="panel" id="three-panel">
               <div class="panel-title"></div>
@@ -313,6 +344,22 @@
                     </div>
                   </form>
                 </div>
+                <div class="grid-item">
+                  <form action="/deleteManager" method="POST">
+                  <h1>delete a Manager</h1>
+                  <div class="form-group">
+                    <h3>Manager id</h3>
+                    <input type = "text"
+                    name = "manager_id"
+                    placeholder="manager_id"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" value="submit" class="btn" />
+                  </div>
+                  </form> 
+                </div>
+
               </div>
             </div>
             <div class="panel" id="four-panel">
@@ -377,6 +424,21 @@
                 </form>
               </div>
             </div>
+            <div class="grid-item">
+              <form action="/deleteCustomer" method="POST">
+              <h1>delete a customer</h1>
+              <div class="form-group">
+                <h3>customer id</h3>
+                <input type = "text"
+                name = "customer_id"
+                placeholder="customer_id"
+                />
+              </div>
+              <div class="form-group">
+                <input type="submit" value="submit" class="btn" />
+              </div>
+              </form> 
+            </div>
           </div>
             <div class="panel" id="five-panel">
               <div class="panel-title"></div>
@@ -430,6 +492,21 @@
                 </form>
               </div>
             </div>
+            <div class="grid-item">
+              <form action="/deleteDish" method="POST">
+              <h1>Delete a Dish</h1>
+              <div class="form-group">
+                <h3>dish id</h3>
+                <input type = "text"
+                name = "dish_id"
+                placeholder="dish_id"
+                />
+              </div>
+              <div class="form-group">
+                <input type="submit" value="submit" class="btn" />
+              </div>
+              </form> 
+            </div>
           </div>
             <div class="panel" id="six-panel">
               <div class="panel-title"></div>
@@ -474,7 +551,23 @@
                   </div>
                 </form>
               </div>
+              <div class="grid-item">
+                <form action="/deleteIngredient" method="POST">
+                <h1>Delete a Ingredient</h1>
+                <div class="form-group">
+                  <h3>Ingredient id</h3>
+                  <input type = "text"
+                  name = "ingredient_id"
+                  placeholder="ingredient_id"
+                  />
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="submit" class="btn" />
+                </div>
+                </form> 
+              </div>
             </div>
+            
           </div>
             <div class="panel" id="seven-panel">
               <div class="panel-title"></div>
@@ -532,6 +625,21 @@
                 </form>
               </div>
             </div>
+            <div class="grid-item">
+              <form action="/deleteSupplier" method="POST">
+              <h1>Delete a Supplier</h1>
+              <div class="form-group">
+                <h3>Supplier id</h3>
+                <input type = "text"
+                name = "supplier_id"
+                placeholder="supplier_id"
+                />
+              </div>
+              <div class="form-group">
+                <input type="submit" value="submit" class="btn" />
+              </div>
+              </form> 
+            </div>
           </div>
             <div class="panel" id="eight-panel">
               <div class="panel-title"></div>
@@ -539,17 +647,16 @@
                 <div class="grid-item">
                   <h1>Order Table </h1>
                   <table>
-                    <tr><td>First Name</td><td>Last Name</td></tr>
-                    <tr><td>Ed</td><td>Wood</td></tr>
-                    <tr><td>Albert</td><td>Schweitzer</td></tr>
-                    <tr><td>Jane</td><td>Fonda</td></tr>
-                    <tr><td>William</td><td>Shakespeare</td></tr>
+                    <tr> <th>Customer_ID</th> <th>Dish_Id</th></tr>
+                      {% for item in order_table %}
+                       <tr><td>{{item.customer_id}}</td> <td>{{item.dish_id}}</td><tr>
+                      {%endfor%}
                 </table>
                 </div>
                 <div class="grid-item">
-              <form action="/submit" method="POST">
+              <form action="/submitOrder" method="POST">
                 <div class="form-group">
-                  <h3>Customer ID</h3>
+                  <h3>Order ID</h3>
                   <input
                     type="text"
                     name="customer_id"
@@ -557,10 +664,10 @@
                   />
                 </div>
                 <div class="form-group">
-                    <h3>Dish Name</h3>
+                    <h3>Dish Id</h3>
                     <input
                       type="text"
-                      name="name"
+                      name="dish_id"
                       placeholder="dish id"
                     />
                 </div>
@@ -569,6 +676,26 @@
                     <input type="submit" value="Submit" class="btn" />
                   </div>
                 </form>
+              </div>
+              <div class="grid-item">
+                <form action="/deleteOrder" method="POST">
+                <h1>Delete a Order</h1>
+                <div class="form-group">
+                  <h3>Customer id</h3>
+                  <input type = "text"
+                  name = "customer_id"
+                  placeholder="customer_id"
+                  />
+                  <h3>Dish id</h3>
+                  <input type = "text"
+                  name = "dish_id"
+                  placeholder="dish_id"
+                  />
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="submit" class="btn" />
+                </div>
+                </form> 
               </div>
             </div>
             </div>
