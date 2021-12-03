@@ -383,18 +383,27 @@ def manager():
 
 @app.route('/customerInfo', methods=['GET', 'POST'])
 def customerinfo():
-    #if request.method == 'POST':
-        #dish_id = request.form['dish_id']
-        #print(dish_id)
-    return render_template('customerinfo.html')
+    if request.method == 'GET':
+        dish_id = request.args.get('dish_id')
+    return render_template('customerinfo.html', test_value = dish_id)
 
 @app.route('/getCustomerInfo', methods=['GET', 'POST'])
 def thankyou():
+    if request.method == 'POST':
+        customer_id = request.form['customer_id']
+        name = request.form['name']
+        address = request.form['address']
+        phone_num = request.form['phone_num']
+        dish_id = request.form['dish_id']
+        if db.session.query(Customer).filter(Customer.customer_id == customer_id).count() == 0:
+            new_entry = Customer(customer_id, name, address, phone_num)
+            db.session.add(new_entry)
+            db.session.commit()
+        if db.session.query(Order).filter(Order.customer_id == customer_id, Order.dish_id == dish_id).count() == 0:
+            new_entry = Order(customer_id, dish_id)
+            db.session.add(new_entry)
+            db.session.commit()
     return render_template('thankyou.html')
-
-def addCustomerOrderInfo ():
-    pass
-    Test
 
 
 if __name__ == '__main__':
