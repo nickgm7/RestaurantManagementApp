@@ -68,19 +68,23 @@
               <!-- row and justify-content-center class is used to place the form in center -->
               <section class="row justify-content-center">
                 <section class="col-12 col-sm-6 col-md-4">
-                  <form class="form-container">
-                  <div class="form-group">
-                    <h4 class="text-center font-weight-bold"> Login </h4>
-                    <p>
-                        <label for="InputUser">User ID</label>
-                          <input type="user" class="form-control" id="InputUser" aria-describeby="userHelp" placeholder="Enter user ID">
-                  </div>
-                        <label for="InputPassword1">Password</label>
-                          <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
-                    </p>
-                  <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                  
-                  </form>
+              <form class="form-container" action="/submit" method="POST">
+                <div class="form-group">
+                  <h4 class="text-center font-weight-bold"> Login </h4>
+                  <p>
+                      <label for="InputUser">User ID</label>
+                        <input type="user" name="userID" class="form-control" id="InputUser" aria-describeby="userHelp" placeholder="Enter user ID">
+                </div>
+                      <label for="InputPassword">Password</label>
+                        <input type="password" name="password" class="form-control" id="InputPassword" placeholder="Password">
+                  </p>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                  {% if message %}
+                  <p style="color:#FF0000" class="message">{{ message | safe }}</p> 
+                  {% endif %}
+                <div class="form-footer">
+                </div>
+              </form>
                 </section>
               </section>
             </section>
