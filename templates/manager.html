@@ -2,56 +2,62 @@
 <html>
     <head>
         <style>
-
-          body{
+          body
+          {
             font-family: Arial, Helvetica, sans-serif;
             color:wheat;
             background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65),rgba(0,0,0,0.39),rgba(0,0,0,0))no-repeat
-            , url(static/foodpic.jpg)no-repeat;
+            , url(static/background.jpg)no-repeat;
             background-size: cover;
           }
-          .grid-container {
+          .grid-container 
+          {
             display: grid;
             grid-template-columns: auto auto auto;
             justify-content: space-evenly;
             padding: 10px;
           }
-          .grid-item {
+          .grid-item 
+          {
             border: 1px solid rgba(0, 0, 0, 0.8);
             padding: 5px;
             font-size: 10px;
             text-align: center;
           }
-          .form-group{
+          .form-group
+          {
             width: 300px;
             float: center;
             margin: 10px auto;
             text-align: center;
           }
-          table {
+          table 
+          {
             overflow-y: scroll;
             height: 300px;
-            
             display: block;  
           }
-
-          td {
+          td 
+          {
             border: 1px solid blue;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
           }
-          h2{
+          h2
+          {
             color:#000;
             text-align:center;
             font-size:2em;
           }
-          .warpper{
+          .warpper
+          {
             display:flex;
             flex-direction: column;
             align-items: center;
           }
-          .tab{
+          .tab
+          {
             cursor: pointer;
             padding:10px 20px;
             margin:0px 2px;
@@ -61,7 +67,8 @@
             border-radius:3px 3px 0px 0px;
             box-shadow: 0 0.5rem 0.8rem #00000080;
           }
-          .panels{
+          .panels
+          {
             background:darkslategray;
             box-shadow: 0 2rem 2rem #00000080;
             min-height:600px;
@@ -71,23 +78,29 @@
             overflow:hidden;
             padding:20px;  
           }
-          .panel{
+          .panel
+          {
             display:none;
             animation: fadein .8s;
           }
-          @keyframes fadein {
-              from {
-                  opacity:0;
-              }
-              to {
-                  opacity:1;
-              }
+          @keyframes fadein 
+          {
+            from 
+            {
+              opacity:0;
+            }
+            to 
+            {
+              opacity:1;
+            }
           }
-          .panel-title{
+          .panel-title
+          {
             font-size:1.5em;
             font-weight:bold
           }
-          .radio{
+          .radio
+          {
             display:none;
           }
           #one:checked ~ .panels #one-panel,
@@ -97,8 +110,8 @@
           #five:checked ~ .panels #five-panel,
           #six:checked ~ .panels #six-panel,
           #seven:checked ~ .panels #seven-panel,
-          #eight:checked ~ .panels #eight-panel{
-            
+          #eight:checked ~ .panels #eight-panel
+          {
             display:block
           }
           #one:checked ~ .tabs #one-tab,
@@ -108,42 +121,50 @@
           #five:checked ~ .tabs #five-tab,
           #six:checked ~ .tabs #six-tab,
           #seven:checked ~ .tabs #seven-tab,
-          #eight:checked ~ .tabs #eight-tab{
+          #eight:checked ~ .tabs #eight-tab
+          {
             background:darkslategray;
             color:wheat;
             border-top: 3px solid salmon;
           }
-                    
-                    
-
-          .box ul li{
-            width: 120px;
-            float:left;
-            margin: 10px auto;
-            text-align: center;}
-
-          .box ul li a{
+          .box ul li
+          {
+            width: 150px;
+            text-align: center;
+            padding: 15px;
+            margin: 10px;
+          }
+          .box ul li a
+          {
             position: 250px 125px;
             text-decoration: none;
-            color:darkgray;}
-
-          .box ul li:hover{background-color: salmon;}
-          .box ul li a:hover{ color:white;}
-          
-          .header{ 
+            color:darkgray;
+          }
+          .box ul li:hover
+          {
+            background-color: salmon;
+          }
+          .box ul li a:hover
+          { 
+            color:white;
+          }
+          .header
+          { 
             width: 500px;
             float: center;
             margin: 10px auto;
             text-align: center;
           }
-          .form-group{
+          .form-group
+          {
             grid-area: menu;
             width: auto;
             float: center;
             margin: 10px auto;
             text-align: center;
           }
-          .submit{
+          .submit
+          {
             grid-area: menu;
             width: auto;
             float: center;
@@ -155,10 +176,9 @@
       <body>
         <div class="box">
           <ul type="none">
-            <li><a href="/"> Home</a></li>
+            <li><a href="index.html"> Home</a></li>
           </ul>
         </div>    
-        
           <div class="warpper">
             <input class="radio" id="one" name="group" type="radio" checked>
             <input class="radio" id="two" name="group" type="radio">
@@ -169,15 +189,15 @@
             <input class="radio" id="seven" name="group" type="radio">
             <input class="radio" id="eight" name="group" type="radio">
             <div class="tabs">
-            <label class="tab" id="one-tab" for="one">Chef</label>
-            <label class="tab" id="two-tab" for="two">Waiter</label>
-            <label class="tab" id="three-tab" for="three">Manager</label>
-            <label class="tab" id="four-tab" for="four">customer</label>
-            <label class="tab" id="five-tab" for="five">dish</label>
-            <label class="tab" id="six-tab" for="six">ingredient</label>
-            <label class="tab" id="seven-tab" for="seven">supplier</label>
-            <label class="tab" id="eight-tab" for="eight">order</label>
-              </div>
+              <label class="tab" id="one-tab" for="one">Chef</label>
+              <label class="tab" id="two-tab" for="two">Waiter</label>
+              <label class="tab" id="three-tab" for="three">Manager</label>
+              <label class="tab" id="four-tab" for="four">customer</label>
+              <label class="tab" id="five-tab" for="five">dish</label>
+              <label class="tab" id="six-tab" for="six">ingredient</label>
+              <label class="tab" id="seven-tab" for="seven">supplier</label>
+              <label class="tab" id="eight-tab" for="eight">order</label>
+            </div>
             <div class="panels">
             <div class="panel" id="one-panel">
               <div class="panel-title"></div>
@@ -187,7 +207,7 @@
                   <table>
                     <tr> <th>Chef_ID</th> <th>Name</th> <th>Salary</th></tr>
                       {% for item in chef_table %}
-                       <tr><td>{{item.chef_id}}</td> <td>{{item.name}}</td> <td>{{item.salary}}</td> <tr>
+                        <tr><td>{{item.chef_id}}</td> <td>{{item.name}}</td> <td>{{item.salary}}</td> <tr>
                       {%endfor%}
                 </table>
                 </div>
@@ -248,7 +268,7 @@
                   <table>
                     <tr> <th>Waiter_ID</th> <th>Name</th> <th>Salary</th></tr>
                       {% for item in waiter_table %}
-                       <tr><td>{{item.waiter_id}}</td> <td>{{item.name}}</td> <td>{{item.salary}}</td> <tr>
+                      <tr><td>{{item.waiter_id}}</td> <td>{{item.name}}</td> <td>{{item.salary}}</td> <tr>
                       {%endfor%}
                 </table>
                 </div>
@@ -309,7 +329,7 @@
                     <table>
                       <tr> <th>Manager_ID</th> <th>name</th> <th>salary</th></tr>
                       {% for item in manager_table %}
-                       <tr><td>{{item.manager_id}}</td> <td>{{item.name}}</td> <td>{{item.salary}}</td> <tr>
+                      <tr><td>{{item.manager_id}}</td> <td>{{item.name}}</td> <td>{{item.salary}}</td> <tr>
                       {%endfor%}
                 </table>
                 </div>
@@ -374,7 +394,7 @@
                       <th>phone_num</th>
                     </tr>
                     {% for item in customer_table %}
-                     <tr>
+                    <tr>
                       <td>{{item.customer_id}}</td> 
                       <td>{{item.name}}</td> 
                       <td>{{item.address}}</td>
@@ -448,7 +468,7 @@
                   <table>
                     <tr> <th>Dish_ID</th> <th>Name</th> <th>Description</th> <th>Price</th> </tr>
                     {% for item in dish_table %}
-                     <tr><td>{{item.dish_id}}</td> <td>{{item.name}}</td> <td>{{item.description}}</td> <td>{{item.price}}</td><tr>
+                    <tr><td>{{item.dish_id}}</td> <td>{{item.name}}</td> <td>{{item.description}}</td> <td>{{item.price}}</td><tr>
                     {%endfor%}
                 </table>
                 </div>
@@ -512,10 +532,10 @@
               <div class="panel-title"></div>
               <div class="grid-container">
                 <div class="grid-item">
-                 <table>
+                <table>
                   <tr> <th>Ingredient_ID</th> <th>name</th> <th>Inventory</th></tr>
                       {% for item in ingredient_table %}
-                       <tr><td>{{item.ingredient_id}}</td> <td>{{item.name}}</td> <td>{{item.inventory}}</td> <tr>
+                      <tr><td>{{item.ingredient_id}}</td> <td>{{item.name}}</td> <td>{{item.inventory}}</td> <tr>
                       {%endfor%}
                 </table>
                 </div>
@@ -577,7 +597,7 @@
                   <table>
                     <tr> <th>Supplier_ID</th> <th>Name</th> <th>City</th>  <th>Phone_Num</th></tr>
                       {% for item in supplier_table %}
-                       <tr><td>{{item.supplier_id}}</td> <td>{{item.name}}</td> 
+                      <tr><td>{{item.supplier_id}}</td> <td>{{item.name}}</td> 
                         <td>{{item.city}}</td> 
                         <td>{{item.phone_num}}</td>
                         <tr>
@@ -649,7 +669,7 @@
                   <table>
                     <tr> <th>Customer_ID</th> <th>Dish_Id</th></tr>
                       {% for item in order_table %}
-                       <tr><td>{{item.customer_id}}</td> <td>{{item.dish_id}}</td><tr>
+                      <tr><td>{{item.customer_id}}</td> <td>{{item.dish_id}}</td><tr>
                       {%endfor%}
                 </table>
                 </div>
@@ -701,6 +721,5 @@
             </div>
           </div>
           </div>
-          
       </body>
 </html>

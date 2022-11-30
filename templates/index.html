@@ -6,109 +6,118 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <link rel="stylesheet" href="../static/style.css" />
         <style>
-
-          body{
+          body
+          {
             font-family: Arial, Helvetica, sans-serif;
             color:white;
             background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65),rgba(0,0,0,0.39),rgba(0,0,0,0))no-repeat
-            , url(static/foodpic.jpg)no-repeat;
+            , url(static/background.jpg)no-repeat;
             background-size: cover;
           }
-
-          
-          .box{ 
-            width: 990px;
-            float:right;}
-
-          .box ul li{
-            width: 120px;
+          .box
+          { 
+            width: 100%;
+            float: left;
+            margin: 0 0 1em 0;
+            padding: 0;
+          }
+          .box ul 
+          {
+            list-style: none;
+            width: 800px;
+            margin: 0 auto;
+            padding: 0; 
+          }
+          .box ul li
+          {
+            float: left;
+          }
+          .box ul li a
+          {
+            width: 150px;
             float:left;
-            margin: 10px auto;
-            text-align: center;}
-
-          .box ul li a{
+            text-align: center;
+            padding: 15px;
+            margin: 0px;
             text-decoration: none;
-            color:darkgray;}
-
-          .box ul li:hover{background-color: salmon;}
-          .box ul li a:hover{ color:white;}
-
-          .wd{
+            color:darkgray;
+          }
+          .box ul li:hover
+          {
+            background-color: salmon;
+          }
+          .box ul li a:hover
+          { 
+            color:white;
+          }
+          .wd
+          {
             width: 300px;
-            height: 600px;
+            height: 300px;
             background-color: black;
-            opacity: 0.9;
+            opacity: 0.85;
             padding: 55px;
-            
-            }
-
-          .wd h1{
+            display: grid;
+          }
+          .wd h1
+          {
             text-align: center;
             text-transform: uppercase;
             font-weight: 100px;
-           }
-
-          .wd h4{
-            text-align: justify;
+          }
+          .wd h4
+          {
+            text-align: center;
             color: darkgray;
             font-weight: normal;
           }
-
-          .wd h2{
+          .wd h2
+          {
             text-align: center;
             text-transform: uppercase;
             font-weight: normal;
             margin: 40px auto;
           }
-
-          .opt form input[type="submit"]{
-            background-color: black;
+          .opt form input[type="submit"]
+          {
+            background-color: darkslategray;
             color:white;
-            padding: 12px;
+            padding: 15px;
             display: grid; 
             margin: auto;
             padding-left: 50px;
             padding-right: 50px;
             text-align: center;
+            font-size: 25px;
           }
-
-          .opt form input[type="submit"]:hover{background-color: salmon;}
-          
+          .opt form input[type="submit"]:hover
+          {
+            background-color: salmon;
+          }
         </style>
-      </head>
-      <body>
-        <nav>
-          <div class="box">
-            <ul type="none">
-              <li><a href=""> Home</a></li>
-              <li><a href="manager"> Menu</a></li>
-              <li><a href="order"> Order</a></li>
-              <li><a href="login"> Login</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-      
-    </form>
-  </div>
-        <div class="wd">
-
-          <h1> Welcome! </h1>
-
-          <h4> We are happy to bring you our wide selection of
-            hand picked and crafted meals.
-            You won't get a dining experience
-            like this anywhere else.
-          </h4>
-
-          <h2> Order </h2>
-          <div class="opt">
-            <form action="order">
-              <input type="submit" value="Order Now">
-            </form>
-            
-          </div>
-
+    </head>
+    <body>
+      <nav>
+        <div class="box">
+          <ul type="none">
+            <li><a href="">Home</a></li>
+            <li><a href="manager.html"> Menu</a></li>
+            <li><a href="order.html"> Order</a></li>
+            <li><a href="login.html"> Login</a></li>
+          </ul>
         </div>
-      </body>
+      </nav>
+      <div class="wd">
+        <h1> Welcome! </h1>
+        <h4> We are happy to bring you our wide selection of hand picked and crafted meals.
+          You won't get a dining experience like this anywhere else.
+        </h4>
+        <!--<h2> Order </h2>-->
+        <div class="opt">
+          <form action="order">
+            <input type="submit" value="Order Now">
+          </form>
+        </div>
+      </div>
+    </body>
 </html>

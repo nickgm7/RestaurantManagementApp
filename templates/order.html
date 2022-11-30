@@ -11,24 +11,29 @@
                 color:wheat;
                 box-sizing: border-box;
             }
-            body{
+            body
+            {
                 background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65),rgba(0,0,0,0.39),rgba(0,0,0,0))no-repeat
-                , url(static/foodpic.jpg)no-repeat;
+                , url(static/background.jpg)no-repeat;
                 background-size: cover;
             }
-            h1{
+            h1
+            {
                 text-align: center;
                 padding: 20px;
             }
-            nav{
+            nav
+            {
                 display: grid;
                 place-items: center;
             }
-            nav ul{
+            nav ul
+            {
                 display: inline-block;
                 list-style-type: none;
             }
-            nav ul a{
+            nav ul a
+            {
                 display: inline-block;
                 padding: 20px;
                 font-size: 20px;
@@ -36,61 +41,74 @@
                 color: darkgray;
                 transition: 0.2s ease-in;
             }
-            nav ul a:hover{
+            nav ul a:hover
+            {
                 color: white;
             }
-
-            .box{ 
-                width: 990px;
-                float:right;
+            .box
+            { 
+                width: 1000px;
+                float: right;
             }
-            .box ul li{
+            .box ul li
+            {
+                text-align: center;
+                padding: 15px;
                 width: 280px;
                 float:left;
-                margin: 10px auto;
                 text-align: center;
             }
-            .box ul li a{
+            .box ul li a
+            {
                 text-decoration: none;
                 color:darkgray;
             }
-            ul li:hover{
+            ul li:hover
+            {
                 background-color: salmon;
+                color:white;
             }
-
-            .items{
+            .items
+            {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 padding: 30px 20px;
                 grid-column-gap: 20px;
                 grid-row-gap: 30px;
             }
-            .item img{
+            .item img
+            {
                 width: 100%;
                 height: 300px;object-fit: cover;
                 cursor: pointer;
                 transition: 0.2s ease;
             }
-            .item img:hover{
+            .item img:hover
+            {
                 transform: scale(1.04);
             }
-            .item h4{
+            .item h4
+            {
                 padding: 5px;
                 text-align: center;
             }
-            @media screen and (max-width: 1000px) {
-                .items{
+            @media screen and (max-width: 1000px) 
+            {
+                .items
+                {
                     grid-template-columns: repeat(2, 1fr);
                 }
             }
-            @media screen and (max-width: 768px) {
-                .items{
+            @media screen and (max-width: 768px) 
+            {
+                .items
+                {
                     grid-template-columns: repeat(1, 1fr);
                 }
             }
-
-            .opt form input[type="submit"]{
-                background-color: black;
+            .opt form input[type="submit"]
+            {
+                background-color: darkslategray;
                 color:white;
                 padding: 6px;
                 margin: 0 auto;
@@ -100,26 +118,26 @@
                 cursor: pointer;
                 display: block;
             }
-            .opt form input[type="submit"]:hover{
+            .opt form input[type="submit"]:hover
+            {
                 background-color: salmon;
             }
         </style>
     </head>
     <body>
         <nav>
-        <div class="box">
-            <ul type="none">
-              <a href="/"> <li>Home</li></a>
-              <!-- <a href="order"> <li>Menu</li></a> -->
-              <a href="order"> <li>Order</li></a>
-              <a href="login"> <li>Login</li></a>
-            </ul>
-        </div>
+            <div class="box">
+                <ul type="none">
+                <a href="index.html"> <li>Home</li></a>
+                <a href="manager.html"> <li>Menu</li></a>
+                <!--<a href="order.html"> <li>Order</li></a>-->
+                <a href="login.html"> <li>Login</li></a>
+                </ul>
+            </div>
         </nav>
-
         <section class="items">
             <div class="item">
-                <image src="static\Almond and banana biscuits.png">
+                <image src="static\Almondandbananabiscuits.png">
                 <h4>Almond and Banana Biscuits</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -129,7 +147,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Bean and pesto lasagne.jpg">
+                <image src="static\Beanandpestolasagne.jpg">
                 <h4>Bean and Pesto Lasagne</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -139,7 +157,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Cannellini and artichoke soup.jpg">
+                <image src="static\Cannelliniandartichokesoup.jpg">
                 <h4>Cannellini and Artichoke Soup</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -149,7 +167,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Chicken and egg spaghetti.jpg">
+                <image src="static\Chickenandeggspaghetti.jpg">
                 <h4>Chicken and Egg Spaghetti</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -159,7 +177,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Date and mandarin salad.png">
+                <image src="static\Dateandmandarinsalad.png">
                 <h4>Date and Mandarin Salad</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -169,7 +187,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Egg and apple pizza.jpg">
+                <image src="static\Eggandapplepizza.jpg">
                 <h4>Egg and Apple Pizza</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -179,7 +197,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Jaggery and pepper salad.jpg">
+                <image src="static\Jaggeryandpeppersalad.jpg">
                 <h4>Jaggery and Pepper Salad</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -189,7 +207,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Lamb and olive fusilli.jpg">
+                <image src="static\Lambandolivefusilli.jpg">
                 <h4>Lamb and Olive Fusilli</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -199,7 +217,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Lemon and bacon cupcakes.jpg">
+                <image src="static\Lemonandbaconcupcakes.jpg">
                 <h4>Lemon and Bacon Cupcakes</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -209,7 +227,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Mackerel and camembert salad.jpg">
+                <image src="static\Mackerelandcamembertsalad.jpg">
                 <h4>Mackerel and Camembert Salad</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -219,7 +237,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Milk chocolate and sultana cookies.jpg">
+                <image src="static\Milkchocolateandsultanacookies.jpg">
                 <h4>Milk Chocolate and Sultana Cookies</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -229,7 +247,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Mortadella and chocolate mousse.jpg">
+                <image src="static\Mortadellaandchocolatemousse.jpg">
                 <h4>Mortadella and Chocolate Mousse</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -239,7 +257,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Okra and shallot stir fry.jpg">
+                <image src="static\Okraandshallotstirfry.jpg">
                 <h4>Okra and Shallot Stir Fry</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -249,7 +267,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Pepper and crayfish bagel.jpg">
+                <image src="static\Pepperandcrayfishbagel.jpg">
                 <h4>Pepper and Crayfish Bagel</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -259,7 +277,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Rabbit and tarragon salad.jpg">
+                <image src="static\Rabbitandtarragonsalad.jpg">
                 <h4>Rabbit and Tarragon Salad</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -269,7 +287,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Salmon and chocolate crepes.png">
+                <image src="static\Salmonandchocolatecrepes.png">
                 <h4>Salmon and Chocolate Crepes</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -279,7 +297,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Socca and chorizo salad.jpg">
+                <image src="static\Soccaandchorizosalad.jpg">
                 <h4>Socca and Chorizo Salad</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -289,7 +307,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Turkey and shrimp soup.jpg">
+                <image src="static\Turkeyandshrimpsoup.jpg">
                 <h4>Turkey and Shrimp Soup</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -299,7 +317,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Ugli fruit and coconut milk salad.jpg">
+                <image src="static\Uglifruitandcoconutmilksalad.jpg">
                 <h4>Ugli Fruit and Coconut Milk Salad</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
@@ -309,7 +327,7 @@
                 </div>
             </div>
             <div class="item">
-                <image src="static\Vacherin and red onion salad.jpg">
+                <image src="static\Vacherinandredonionsalad.jpg">
                 <h4>Vacherin and Red Onion Salad</h4>
                 <div class="opt">
                     <form action="/customerInfo" method="get">
